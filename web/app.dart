@@ -1,16 +1,17 @@
-import 'dart:html';
+library burgerama_web;
 
-void main() {
-  querySelector("#sample_text_id")
-      ..text = "Click me!"
-      ..onClick.listen(reverseText);
-}
+import 'package:angular/application_factory.dart';
+import 'package:di/di.dart';
+import 'package:logging/logging.dart';
+import 'package:burgerama/burgerama.dart';
 
-void reverseText(MouseEvent event) {
-  var text = querySelector("#sample_text_id").text;
-  var buffer = new StringBuffer();
-  for (int i = text.length - 1; i >= 0; i--) {
-    buffer.write(text[i]);
-  }
-  querySelector("#sample_text_id").text = buffer.toString();
+main(){
+  Logger.root.level = Level.FINEST;
+  Logger.root.onRecord.listen((LogRecord log) {
+    print(log.message);
+  });
+
+  applicationFactory()
+    ..addModule(new BurgeramaApp())
+    ..run();
 }

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" ng-app>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -10,44 +10,13 @@
   <script async type="application/dart" src="app.dart"></script>
   <script async src="packages/browser/dart.js"></script>
   
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="loading-overlay" ng-hide="true"><div class="content"><div class="loading-spinner spin-logo"></div></div></div>
-    <toaster-container toaster-options="{'position-class': 'toast-top-left', 'time-out': 2500}"></toaster-container>
-   
-      <div class="container-fluid" id="sidebar">
-          <nav class="navbar navbar-primary navbar-inverse" role="navigation">
-              <div class="container-fluid">
-                  <div class="navbar-header">
-                      <h1>Burgerama</h1>
-                  </div>
-  
-                  <ul class="nav navbar-nav navbar-right" ng-controller="AccountController">
-                      <li ng-hide="signedIn"><a href ng-click="showSignInModal();"><span class="glyphicon glyphicon-log-in"></span> Sign in</a></li>
-                      <li ng-show="signedIn" class="dropdown user-info">
-                          <a href class="dropdown-toggle" data-toggle="dropdown">
-                              <span class="user-image"><img ng-src="{{ user.picture }}" alt="{{ user.nickname }}" class="img-circle" height="40" width="40" /></span>
-                              <span class="user-name">{{ user.given_name }} <strong>{{ user.family_name }}</strong></span>
-                              <span class="caret"></span>
-                          </a>
-                          <ul class="dropdown-menu">
-                              <li><a href><span class="glyphicon glyphicon-wrench"></span><span class="label label-warning pull-right">NYI</span> Settings</a></li>
-                              <li><a href ng-click="signOut();"><span class="glyphicon glyphicon-log-out"></span> Sign out</a></li>
-                          </ul>
-                      </li>
-                  </ul>
-              </div>
-          </nav>
-  
-          <ul class="nav navbar-secondary nav-pills">
-              <li ui-sref-active="active"><a ui-sref="search">Search</a></li>
-              <li ui-sref-active="active"><a ui-sref="venues">Venues</a></li>
-              <li ui-sref-active="active"><a ui-sref="outings">Outings</a></li>
-              <li ui-sref-active="active" class="disabled"><a ui-sref="calendar">Calendar</a></li>
-          </ul>
-  
-          <section ui-view></section>
-      </div>
+    
+    <div ng-cloak> 
+        <ng-view></ng-view>
+    </div>
 </body>
 </html>

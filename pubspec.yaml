@@ -2,7 +2,13 @@ name: burgerama
 description: Burgerama Web UI written in Dart
 dependencies:
   browser: any
+  less_node: any
   angular: any
   angular_ui: any
 transformers:
-- angular
+  - angular
+  - less_node:
+      entry_point: less/main.less
+      output: web/style.css
+      cleancss: false
+      compress: false
