@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-
-<html lang="en" ng-app>
+<html ng-app>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Burgerama</title>
-  
-  <script async type="application/dart" src="app.dart"></script>
-  <script async src="packages/browser/dart.js"></script>
-  
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="loading-overlay" ng-hide="true"><div class="content"><div class="loading-spinner spin-logo"></div></div></div>
-    
-    <div ng-cloak> 
-        <ng-view></ng-view>
+  <div class="row">
+    <venue-map></venue-map>
+    <div class="container">
+      <ng-view></ng-view>
     </div>
+  </div>
+
+  <script src="https://maps-api-ssl.google.com/maps/api/js?v=3.exp&key=AIzaSyDMSKCEtbHIORL8DuKSxSEXxkBGB-mqf9c&sensor=true&libraries=places"></script>
+  <script type="application/dart" src="app.dart"></script>
+  <script src="packages/browser/dart.js"></script>
+  <script src="packages/browser/interop.js"></script>
 </body>
 </html>

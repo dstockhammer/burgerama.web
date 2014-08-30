@@ -1,14 +1,11 @@
 name: burgerama
-description: Burgerama Web UI written in Dart
+author: Daniel Stockhammer
+description: Burgerama web UI written in Dart
+homepage: https://github.com/dstockhammer/burgerama.web
 dependencies:
+  angular: ">=0.14.0"
   browser: any
-  less_node: any
-  angular: any
-  angular_ui: any
+  hammock: any
+  google_maps: any
 transformers:
-  - angular
-  - less_node:
-      entry_point: less/main.less
-      output: web/style.css
-      cleancss: false
-      compress: false
+- angular

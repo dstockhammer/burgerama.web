@@ -7,10 +7,15 @@ part of burgerama;
     useShadowDom: false
 )
 class VenuesComponent {
-  List<Venue> _venues;
-  Router _router;
+  ObjectStore _store;
 
-  VenuesComponent(this._router);
+  List<Venue> venues = new List<Venue>();
 
-  bool get hasVenues => this._venues != null && this._venues.isNotEmpty;
+  VenuesComponent(this._store) {
+    this._store.list(Venue).then((venues) {
+      this.venues = venues;
+    });
+  }
+
+  bool get hasVenues => this.venues != null && this.venues.isNotEmpty;
 }

@@ -1,4 +1,4 @@
-part of burgerama; 
+part of burgerama;
 
 class Venue {
   String id;
