@@ -1,8 +1,8 @@
 library burgerama;
 
 import 'dart:html' as html;
-import 'dart:async';
-import 'dart:convert';
+//import 'dart:async';
+//import 'dart:convert';
 
 import 'package:angular/angular.dart';
 import 'package:angular/routing/module.dart';
@@ -23,6 +23,7 @@ class BurgeramaApp extends Module {
     install(new Hammock());
 
     bind(VenuesComponent);
+    bind(MapComponent);
 
     bind(RouteInitializerFn, toValue: burgeramaRouteInitializer);
     bind(NgRoutingUsePushState, toValue: new NgRoutingUsePushState.value(false));

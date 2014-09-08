@@ -3,8 +3,7 @@ part of burgerama;
 @Component(
     selector: 'venues',
     publishAs: 'ctrl',
-    templateUrl: 'lib/venues/views/list.html',
-    useShadowDom: false
+    templateUrl: 'lib/venues/views/list.html'
 )
 class VenuesComponent {
   ObjectStore _store;

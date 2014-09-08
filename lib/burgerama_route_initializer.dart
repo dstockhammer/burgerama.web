@@ -4,7 +4,7 @@ void burgeramaRouteInitializer(Router router, RouteViewFactory view) {
   view.configure({
     'list' : ngRoute(
        path: '/list',
-       viewHtml: '<venues></venues>',
+       viewHtml: '<map></map>',
        defaultRoute: true,
        mount: {
          "show" : ngRoute(

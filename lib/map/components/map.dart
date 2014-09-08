@@ -1,16 +1,14 @@
 part of burgerama;
 
 @Component(
-    selector: 'venue-map',
+    selector: 'map',
     publishAs: 'ctrl',
-    template: '<h1>Hello!!</h1><div id="map-canvas"></div>',
-//    templateUrl: 'lib/map/views/map.html',
-    useShadowDom: false
+    templateUrl: 'lib/map/views/map.html'
 )
-class MapComponent {
+class MapComponent implements AttachAware {
   String title = "Google Maps";
 
-  MapComponent() {
+  attach() {
     final mapOptions = new MapOptions()
       ..center = new LatLng(51.51, -0.11) // London
       ..mapTypeId = MapTypeId.ROADMAP
