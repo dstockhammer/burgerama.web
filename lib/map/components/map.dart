@@ -5,10 +5,11 @@ part of burgerama;
     publishAs: 'ctrl',
     templateUrl: 'lib/map/views/map.html'
 )
-class MapComponent implements AttachAware {
+class MapComponent implements ShadowRootAware {
   String title = "Google Maps";
 
-  attach() {
+  @override
+  onShadowRoot(ShadowRoot shadowRoot) {
     final mapOptions = new MapOptions()
       ..center = new LatLng(51.51, -0.11) // London
       ..mapTypeId = MapTypeId.ROADMAP
@@ -20,6 +21,6 @@ class MapComponent implements AttachAware {
       ..panControl = true
       ..zoom = 16;
 
-    final map = new GMap(html.querySelector("#map-canvas"), mapOptions);
+    final map = new GMap(shadowRoot.querySelector("#map-canvas"), mapOptions);
   }
 }

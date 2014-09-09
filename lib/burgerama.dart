@@ -1,6 +1,6 @@
 library burgerama;
 
-import 'dart:html' as html;
+import 'dart:html';
 //import 'dart:async';
 //import 'dart:convert';
 
