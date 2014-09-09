@@ -1,0 +1,14 @@
+<ul class="nav navbar-nav navbar-right ng-scope">
+  <li ng-if="ctrl.isSignedIn == false"><a href ng-click="ctrl.showSignInModal();"><span class="glyphicon glyphicon-log-in"></span> Sign in</a></li>
+  <li ng-if="ctrl.isSignedIn" class="dropdown user-info">
+    <a href class="dropdown-toggle" data-toggle="dropdown">
+      <span class="user-image"><img ng-src="{{ ctrl.user.picture }}" alt="{{ ctrl.user.nickname }}" class="img-circle" height="40" width="40" /></span>
+      <span class="user-name">{{ ctrl.user.given_name }} <strong>{{ ctrl.user.family_name }}</strong></span>
+      <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href><span class="glyphicon glyphicon-wrench"></span><span class="label label-warning pull-right">NYI</span> Settings</a></li>
+      <li><a href ng-click="ctrl.signOut();"><span class="glyphicon glyphicon-log-out"></span> Sign out</a></li>
+    </ul>
+  </li>
+</ul>

@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Burgerama</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="row">
-    <div class="container">
+  <div id="main">
+    <div id="content" class="col-sm-7" style="padding:0">
+      <!--<header-widget class="visible-xs"></header-widget>-->
+      <map></map>
+    </div>
+    <div id="sidebar" class="col-sm-5">
+      <header-widget class="hidden-xs"></header-widget>
       <ng-view></ng-view>
     </div>
   </div>

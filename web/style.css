@@ -6310,26 +6310,22 @@ button.close {
   }
 }
 html,
-body {
-  height: 100%;
-}
-#main,
-#main > .row {
-  height: 100%;
-}
-.ui-splitbar {
-  z-index: 900;
-}
-.navbar {
-  z-index: 950;
-}
-#map-canvas {
-  height: 100%;
+body,
+#main {
   width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
+  height: 100%;
+}
+#content {
+  height: 40%;
+}
+#sidebar {
+  height: 60%;
+}
+@media (min-width: 768px) {
+  #content,
+  #sidebar {
+    height: 100%;
+  }
 }
 #map-search-box {
   margin-top: 25px;
@@ -6345,35 +6341,47 @@ body {
   text-align: right;
   margin-right: -20px;
 }
-#sidebar {
-  height: 100%;
-  overflow-y: scroll;
-  margin-left: -1px;
-  border-left: 1px solid rgba(0, 0, 0, 0.3);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+.navbar {
+  margin-bottom: 0;
 }
-#sidebar .navbar-right {
-  padding-right: 2em;
-}
-#sidebar .navbar-primary {
+.navbar-primary {
   border: 0;
   border-radius: 0;
-  margin: 0 -15px 5px;
+  padding: 0 10px;
 }
-#sidebar .navbar-primary .navbar-header h1 {
+.navbar-primary .navbar-header h1 {
   margin-top: 15px;
   font-size: 24px;
   color: #999999;
 }
-#sidebar .navbar-primary .user-info img {
+.navbar-primary .user-info img {
   margin-right: 10px;
 }
-#sidebar .navbar-primary .user-info a {
+.navbar-primary .user-info a {
   padding-bottom: 10px;
   padding-top: 10px;
 }
-#sidebar .navbar-secondary {
+.navbar-header {
+  float: left;
+}
+.navbar-right {
+  padding-right: 2em;
+  float: right;
+}
+@media (min-width: 768px) {
+  .navbar-primary {
+    margin: 0 -15px 5px;
+    padding: 0;
+  }
+}
+.navbar-secondary {
   margin: 15px 0;
+}
+#sidebar {
+  overflow-y: scroll;
+  margin-top: -1px;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 #sidebar .loading-spinner {
   margin: 10% auto;
@@ -6386,6 +6394,16 @@ body {
 }
 #sidebar .no-items-available .text {
   margin-top: 3em;
+}
+@media (min-width: 768px) {
+  #sidebar {
+    height: 100%;
+    overflow-y: scroll;
+    margin-top: 0;
+    margin-left: -1px;
+    border-top: 0;
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+  }
 }
 #venue-list,
 #outing-list {

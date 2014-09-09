@@ -7,5 +7,9 @@ dependencies:
   browser: any
   hammock: any
   google_maps: any
+  less_node: any
 transformers:
 - angular
+- less_node:
+    entry_point: less\main.less
+    output: web\style.css

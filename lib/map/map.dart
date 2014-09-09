@@ -3,11 +3,9 @@ part of burgerama;
 @Component(
     selector: 'map',
     publishAs: 'ctrl',
-    templateUrl: 'lib/map/views/map.html'
+    templateUrl: 'lib/map/map.html'
 )
 class MapComponent implements ShadowRootAware {
-  String title = "Google Maps";
-
   @override
   onShadowRoot(ShadowRoot shadowRoot) {
     final mapOptions = new MapOptions()
